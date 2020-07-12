@@ -12,7 +12,7 @@ node {
     }
     stage("Lint Test") {
       echo 'Checking Proper Linting...'
-      sh '/home/ubuntu/.local/bin/hadolint Dockerfile'
+      sh ' /home/ubuntu/.linuxbrew/Cellar/hadolint/1.18.0/bin/hadolint Dockerfile'
     }
     stage('Build Docker Image') {
 	    echo 'Building Docker image...'
