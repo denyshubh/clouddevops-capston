@@ -1,4 +1,4 @@
-FROM mhart/alpine-node AS builder
+FROM mhart/alpine-node:14 AS builder
 
 # Create app directory
 RUN mkdir -p /usr/src/client
@@ -14,7 +14,7 @@ COPY . /usr/src/client
 RUN yarn run build
 # CMD ["yarn", "start"]
 
-FROM mhart/alpine-node
+FROM mhart/alpine-node:14
 RUN yarn global add serve
 WORKDIR /usr/src/client
 COPY --from=builder /usr/src/client/build .
