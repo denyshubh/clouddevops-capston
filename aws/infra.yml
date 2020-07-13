@@ -8,16 +8,16 @@ Parameters:
     Type: String
   VpcCIDR:
     Type: String
-    Default: 10.0.1.0/16
+    Default: 10.5.1.0/16
   Subnet1CIDR:
     Type: String
-    Default: 10.0.1.0/24
+    Default: 10.5.1.0/24
   Subnet2CIDR:
     Type: String
-    Default: 10.0.1.1/24
+    Default: 10.5.1.1/24
   Subnet3CIDR:
     Type: String
-    Default: 10.0.1.2/24
+    Default: 10.5.1.2/24
 Resources:
   VPC:
     Type: AWS::EC2::VPC
