@@ -6,7 +6,7 @@
     },
     {
         "ParameterKey": "SshKey",
-        "ParameterValue": "denyshubham-ssh-1"
+        "ParameterValue": "myWindowsKeyPair"
     },
     {
         "ParameterKey":"DesiredInstances",
