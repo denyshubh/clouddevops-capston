@@ -33,7 +33,6 @@ node {
 	    sh "kubectl set image deployments/capstone-app capstone-app=${registry}:latest"         
             sh "kubectl get nodes"
             sh "kubectl get pods"
-            sh "aws cloudformation update-stack --stack-name udacity-capstone-nodes --template-body /home/ubuntu/clouddevops-capston/aws/worker_nodes.yml --parameters home/ubuntu/clouddevops-capston/aws/worker_nodes_param.json --capabilities CAPABILITY_IAM"
         }
       }
     }
