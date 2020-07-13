@@ -12,7 +12,7 @@ Resources:
     Properties:
       Version: '1.13'
       RoleArn: >-
-        arn:aws:iam::012345678910:role/eks-role
+        arn:aws:iam::618263559832:instance-profile/ADMINROLE
       ResourcesVpcConfig:
         SecurityGroupIds:
         - Fn::ImportValue:
