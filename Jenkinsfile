@@ -29,7 +29,7 @@ node {
         withAWS(credentials: 'aws-credentials', region: 'us-east-1') {
             sh "aws eks --region us-east-1 update-kubeconfig --name EKSResouce-3u4jt3knGVdF"
             sh "kubectl apply -f /home/ubuntu/clouddevops-capston/aws/aws-auth-cm.yml"
-            sh "kubectl apply -f /home/ubuntu/clouddevops-capston/aws/capstone-app-deployment.yml"
+            sh "kubectl apply -f  /home/ubuntu/clouddevops-capston/aws/capston-app-deployment.yml"
 	    sh "kubectl set image deployments/capstone-app capstone-app=${registry}:latest"         
             sh "kubectl get nodes"
             sh "kubectl get pods"
