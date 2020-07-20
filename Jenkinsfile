@@ -14,6 +14,20 @@ node {
       echo 'Checking Proper Linting...'
       sh ' /home/ubuntu/.linuxbrew/Cellar/hadolint/1.18.0/bin/hadolint Dockerfile'
     }
+	
+    stage('Sonarqube') {
+      environment {
+	scannerHome = tool 'SonarQubeScanner'
+      }
+      steps {
+        withSonarQubeEnv('sonarqube') {
+          sh "${scannerHome}/bin/sonar-scanner"
+        }
+        timeout(time: 10, unit: 'MINUTES') {
+          waitForQualityGate abortPipeline: true
+        }
+      }
+    }
     stage('Build Docker Image') {
 	    echo 'Building Docker image...'
       withCredentials([usernamePassword(credentialsId: 'dockerhub', passwordVariable: 'dockerHubPassword', usernameVariable: 'dockerHubUser')]) {
